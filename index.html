@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assistente Panamá</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="header">
+      <h1>Assistente Pan - E.E REPUBLICA DO PANAMA</h1>
+      <button id="toggleThemeButton"><i class="bi bi-moon-fill"></i></button>
+    </div>
+
+    <div class="chat-box" id="chatBox">
+      <!-- Mensagens serão adicionadas aqui dinamicamente -->
+      <div class="loading-indicator" id="loadingIndicator" style="display: none;">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+
+    <div class="input-section">
+      <button id="micButton"><i class="bi bi-mic-fill"></i></button>
+      <input type="text" id="userInput" placeholder="Digite aqui sua mensagem...">
+      <button id="sendMessageButton"><i class="bi bi-send-fill"></i></button>
+    </div>
+
+    <div class="controls" style="margin-top: 10px;">
+      <select id="voiceSelect" style="display: none;"></select>
+      <button id="setVoiceButton">Escolher Voz</button>
+      <button id="soundToggleButton"><i class="bi bi-volume-up-fill"></i></button>
+      <button id="clearChatButton">Limpar Chat</button>
+    </div>
+
+    <!-- Mensagem de feedback e versão de teste -->
+    <div class="feedback-notice" style="margin-top: 20px; padding: 10px; background-color: #f8f9fa; border: 1px solid #ced4da; border-radius: 5px;">
+      <p style="margin: 0;">Se sua pergunta não foi respondida, por favor, deixe sua sugestão ou feedback!</p>
+      <p style="margin: 0; font-weight: bold;">Este assistente está em versão de teste.</p>
+    </div>
+
+    <div class="feedback-container">
+      <textarea id="feedbackText" placeholder="Deixe sua sugestão ou feedback"></textarea>
+      <button id="feedbackButton">Enviar Feedback</button>
+      <p id="feedbackMessage"></p>
+    </div>
+
+    <!-- VLibras Widget -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <sub style="display: block;">
+      <p>Desenvolvido por Guilherme Sousa e Leonardo Araujo - 3º ano I</p>
+    </sub>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

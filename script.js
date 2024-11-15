@@ -233,13 +233,3 @@ function showFeedbackMessage(message, color) {
     feedbackMessage.textContent = message;
     feedbackMessage.style.color = color;
 }
-function addMessage(message) {
-  const chatBox = document.querySelector('.chat-box');
-  const messageElement = document.createElement('div');
-  messageElement.className = 'user-message'; // ou 'assistant-message'
-  messageElement.textContent = message;
-  chatBox.appendChild(messageElement);
-
-  // Rolagem automática para a última mensagem
-  chatBox.scrollTop = chatBox.scrollHeight;
-}

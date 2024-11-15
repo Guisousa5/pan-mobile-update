@@ -1,3 +1,4 @@
+
 /* Reset */
 * {
   margin: 0;
@@ -14,7 +15,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh; /* Preencher a tela cheia */
-  overflow: hidden; /* Remover barras de rolagem */
+  /* Remover overflow: hidden; para permitir rolagem */
 }
 
 /* Chat Container */
@@ -30,7 +31,7 @@ body {
   flex-direction: column;
   gap: 15px;
   transition: all 0.3s ease;
-  overflow: auto; /* Para garantir que o conteúdo não saia do container */
+  overflow: hidden; /* Para garantir que o conteúdo não saia do container */
 }
 
 /* Header */
@@ -64,7 +65,6 @@ body {
 /* Chat Box */
 .chat-box {
   flex: 1; /* Permite que a caixa de chat cresça conforme necessário */
-  height: 0; /* Inicialmente, a altura é 0 */
   overflow-y: auto; /* Permite a rolagem vertical */
   padding-right: 10px;
   scroll-behavior: smooth;

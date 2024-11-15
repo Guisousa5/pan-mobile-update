@@ -9,29 +9,28 @@
 
 /* Background */
 body {
-  background-color: #f4f4f9; /* Fundo suave */
+  background-color: #f4f4f9;
   color: #333;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Alterado para flex-start para permitir que o conteúdo role */
-  min-height: 100vh; /* Use min-height para garantir que o body preencha a tela */
-  overflow: auto; /* Permite a rolagem do body */
+  align-items: flex-start;
+  min-height: 100vh;
+  /* overflow: auto; Remova ou ajuste conforme necessário */
 }
 
 /* Chat Container */
 .chat-container {
   width: 100%;
-  max-width: 480px; /* Limitar a largura em dispositivos maiores */
-  max-height: 100vh; /* Limite a altura máxima para ocupar 90% da altura da tela */
-  background-color: #ffffff; /* Fundo branco */
-  border-radius: 20px; /* Bordas arredondadas */
+  max-width: 600px; /* Aumentado para 600px */
+  height: 100%; /* Mantém a altura ocupando 100% da tela */
+  background-color: #ffffff;
+  border-radius: 20px;
   box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  transition: all 0.3s ease;
-  overflow: auto; /* Para garantir que o conteúdo não saia do container */
+  overflow: auto;
 }
 
 /* Header */
@@ -64,14 +63,12 @@ body {
 
 /* Chat Box */
 .chat-box {
-  flex: 1; /* Mantém a flexibilidade */
-  overflow-y: auto; /* Permite a rolagem vertical */
-  padding-right: 10px;
-  scroll-behavior: smooth;
-  max-height: 80vh; /* Aumentado para 80vh, ajuste conforme necessário */
-  min-height: 300px; /* Definindo uma altura mínima para o chat-box */
-  border: 1px solid #e0e0e0; /* Adicione uma borda se desejar */
-  border-radius: 10px; /* Bordas arredondadas */
+  flex: 1;
+  overflow-y: auto; /* Permite a rolagem vertical quando necessário */
+  min-height: 200px; /* Tamanho inicial do chat-box */
+  height: auto;
+  max-height: 200px;
+   /* A altura se ajusta automaticamente conforme o conteúdo */
 }
 
 /* Scrollbar Customization */

@@ -71,10 +71,34 @@ soundToggleButton.addEventListener('click', () => {
 function displayMessage(message, type) {
     const messageDiv = document.createElement('div');
     messageDiv.classList.add(type === 'user' ? 'user-message' : 'assistant-message');
-    messageDiv.textContent = message;
+
+    // Cria um elemento de imagem para o assistente
+    if (type === 'assistant') {
+        const assistantImage = document.createElement('img');
+        assistantImage.src = 'baixados.png'; // Substitua pela URL da imagem do assistente
+        assistantImage.alt = 'Assistente';
+        assistantImage.classList.add('assistant-image'); // Adicione uma classe para estilização, se necessário
+
+        // Cria uma bolinha
+        const dot = document.createElement('span');
+        dot.classList.add('dot'); // Adicione uma classe para estilização
+        dot.textContent = '● '; // Representa a bolinha
+        dot.style.color = 'blue'; // Você pode mudar a cor da bolinha aqui
+
+        // Adiciona a imagem e a bolinha ao messageDiv
+        messageDiv.appendChild(assistantImage);
+        messageDiv.appendChild(dot);
+    }
+
+    // Adiciona a mensagem de texto
+    const textNode = document.createTextNode(message);
+    messageDiv.appendChild(textNode);
+
+    // Adiciona a mensagem ao chat
     chatBox.appendChild(messageDiv);
     chatBox.scrollTop = chatBox.scrollHeight;
 
+    // Salva a mensagem no localStorage
     const messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
     messages.push({ message, type });
     localStorage.setItem('chatMessages', JSON.stringify(messages));

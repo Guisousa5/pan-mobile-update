@@ -13,16 +13,16 @@ body {
   color: #333;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh; /* Preencher a tela cheia */
-  /* Remover overflow: hidden; para permitir rolagem */
+  align-items: flex-start; /* Alterado para flex-start para permitir que o conteúdo role */
+  min-height: 100vh; /* Use min-height para garantir que o body preencha a tela */
+  overflow: auto; /* Permite a rolagem do body */
 }
 
 /* Chat Container */
 .chat-container {
-  width: 100%;
+  width: 90%;
   max-width: 480px; /* Limitar a largura em dispositivos maiores */
-  height: 100%; /* Ocupa 100% da altura da tela */
+  max-height: 90vh; /* Limite a altura máxima para ocupar 90% da altura da tela */
   background-color: #ffffff; /* Fundo branco */
   border-radius: 20px; /* Bordas arredondadas */
   box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);

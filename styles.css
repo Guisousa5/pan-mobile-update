@@ -20,9 +20,9 @@ body {
 
 /* Chat Container */
 .chat-container {
-  width: 90%;
+  width: 100%;
   max-width: 480px; /* Limitar a largura em dispositivos maiores */
-  max-height: 90vh; /* Limite a altura máxima para ocupar 90% da altura da tela */
+  max-height: 100vh; /* Limite a altura máxima para ocupar 90% da altura da tela */
   background-color: #ffffff; /* Fundo branco */
   border-radius: 20px; /* Bordas arredondadas */
   box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
@@ -31,7 +31,7 @@ body {
   flex-direction: column;
   gap: 15px;
   transition: all 0.3s ease;
-  overflow: hidden; /* Para garantir que o conteúdo não saia do container */
+  overflow: auto; /* Para garantir que o conteúdo não saia do container */
 }
 
 /* Header */
@@ -64,21 +64,25 @@ body {
 
 /* Chat Box */
 .chat-box {
-  flex: 1; /* Permite que a caixa de chat cresça conforme necessário */
+  flex: 1; /* Mantém a flexibilidade */
   overflow-y: auto; /* Permite a rolagem vertical */
   padding-right: 10px;
   scroll-behavior: smooth;
+  max-height: 80vh; /* Aumentado para 80vh, ajuste conforme necessário */
+  min-height: 300px; /* Definindo uma altura mínima para o chat-box */
+  border: 1px solid #e0e0e0; /* Adicione uma borda se desejar */
+  border-radius: 10px; /* Bordas arredondadas */
 }
 
+/* Scrollbar Customization */
 .chat-box::-webkit-scrollbar {
-  width: 8px;
+  width: 10px; /* Aumentado para 10px */
 }
 
 .chat-box::-webkit-scrollbar-thumb {
   background-color: #007bff; /* Azul para a barra de rolagem */
-  border-radius: 4px;
+  border-radius: 5px;
 }
-
 /* Fade In Animation */
 @keyframes fadeIn {
   from {
